@@ -117,11 +117,21 @@ $ yarn add electron-serve # or npm i electron-serve
 }
 ```
 
-#### 7) Download the app icon
+#### 7) Create `public` directory inside `src/.vuepress`
+
+```bash
+# Windows Users
+$ mkdir src\.vuepress\public
+
+# Linux and macOS Users
+$ mkdir -p src/.vuepress/public
+```
+
+#### 8) Download the app icon
 
 [favicon.png](https://raw.githubusercontent.com/soulehshaikh99/assets/master/framework-icons/vuepress/favicon.png) and place it in the public directory.
 
-#### 8) Paste vuepress configuration in `src/.vuepress/config.js` file
+#### 9) Paste vuepress configuration in `src/.vuepress/config.js` file
 
 ```js
 module.exports = {
@@ -130,7 +140,7 @@ module.exports = {
 };
 ```
 
-#### 9) Create main.js file (serves as entry point for Electron App's Main Process)
+#### 10) Create main.js file (serves as entry point for Electron App's Main Process)
 
 ```bash
 # Windows Users
@@ -141,7 +151,7 @@ $ fsutil file createnew main.js 0
 $ touch main.js
 ```
 
-#### 10) Paste the below code in main.js file
+#### 11) Paste the below code in main.js file
 
 ```js
 // Modules to control application life and create native browser window
@@ -226,7 +236,7 @@ app.on("activate", function () {
 // code. You can also put them in separate files and require them here.
 ```
 
-#### 11) Update the script section of `package.json`
+#### 12) Update the script section of `package.json`
 
 ```bash
 # Add this scripts
@@ -246,7 +256,7 @@ app.on("activate", function () {
 }
 ```
 
-#### 12) Add the following configuration in `package.json`
+#### 13) Add the following configuration in `package.json`
 
 **Note:** build configuration is used by electron-builder, modify it if you wish to add more packaging and native distribution options for different OS Platforms.
 
@@ -265,7 +275,7 @@ app.on("activate", function () {
 }
 ```
 
-#### 13) Test drive your app
+#### 14) Test drive your app
 
 ```bash
 # Run your app
