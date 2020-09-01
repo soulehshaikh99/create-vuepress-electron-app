@@ -1,8 +1,8 @@
 <div align="center">
-<img alt="Electron Vue Crossover Banner" src="https://raw.githubusercontent.com/soulehshaikh99/assets/master/create-electron-framework-app/readme/svg/Electron_Vue.svg" width="580" />
+<img alt="Electron VuePress Crossover Banner" src="https://raw.githubusercontent.com/soulehshaikh99/assets/master/create-electron-framework-app/readme/svg/Electron_VuePress.svg" width="580" />
 </div>
 <br />
-The boilerplate code to get started creating Cross-platform Desktop Apps with Electron and Vue.js as front-end technology.
+The boilerplate code to get started creating Cross-platform Desktop Apps with Electron and VuePress as front-end technology.
 <br />
 <br />
 <div align="center">
@@ -17,7 +17,7 @@ The boilerplate code to get started creating Cross-platform Desktop Apps with El
 
 ## ✒️ Overview
 
-The aim of this project is to provide Web Developers using `vue.js` the power to create cross-platform desktop apps using `electron`.
+The aim of this project is to provide Web Developers using `vuepress` the power to create cross-platform desktop apps using `electron`.
 
 #### 🧐 What packages does the project use?
 
@@ -27,7 +27,11 @@ The aim of this project is to provide Web Developers using `vue.js` the power to
 
 **`electron-serve`** is used for Static file serving for Electron apps.
 
-**`vue.js`** is a progressive framework for building user interfaces. It is designed from the ground up to be incrementally adoptable, and can easily scale between a library and a framework depending on different use cases. It consists of an approachable core library that focuses on the view layer only, and an ecosystem of supporting libraries that helps you tackle complexity in large Single-Page Applications.
+**`vuepress`** is a Vue-powered Static Site Generator.
+Simplicity First: Minimal setup with markdown-centered project structure helps you focus on writing.
+Vue-Powered: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
+Performant: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
+99
 
 **`concurrently`** is used to run multiple commands concurrently.
 
@@ -45,14 +49,14 @@ But I strongly recommend using <em>yarn</em> as it is a better choice when compa
 # Clone the Project
 
 # Use degit scaffolding tool
-$ npx degit soulehshaikh99/create-vue-electron-app create-vue-electron-app
+$ npx degit soulehshaikh99/create-vuepress-electron-app create-vuepress-electron-app
 # or GitHub CLI Users
-$ gh repo clone https://github.com/soulehshaikh99/create-vue-electron-app.git
+$ gh repo clone https://github.com/soulehshaikh99/create-vuepress-electron-app.git
 # or Normal Git Users
-$ git clone https://github.com/soulehshaikh99/create-vue-electron-app.git
+$ git clone https://github.com/soulehshaikh99/create-vuepress-electron-app.git
 
 # Switch location to the cloned directory
-$ cd create-vue-electron-app
+$ cd create-vuepress-electron-app
 
 # Install dependencies
 $ yarn # or npm install
@@ -66,106 +70,67 @@ $ yarn electron-pack # or npm run electron-pack
 
 ### 💫 Create this boilerplate from scratch (Manual Setup)
 
-#### 1) Start by installing @vue/cli globally
+#### 1) Use the `create-vuepress-site` generator which will help scaffold the basic VuePress site structure for you.
 
 ```bash
-$ yarn global add @vue/cli
-# npm i -g @vue/cli
+$ yarn create vuepress-site
+# npx create-vuepress-site
 ```
 
-#### 2) Create a vue project using @vue/cli
+#### 2) Rename `docs` directory to any project-name of your choice.
 
 ```bash
-$ vue create create-vue-electron-app
+$ move docs create-vuepress-electron-app
 ```
 
 #### 3) Switch to project directory
 
 ```bash
-$ cd create-vue-electron-app
+$ cd create-vuepress-electron-app
 ```
 
-#### 4) Move all dependencies to devDependencies using IDE / Text Editor
+#### 4) Install Development Dependencies
 
 ```bash
-# It should look something like this
-"dependencies": {},
-"devDependencies": {
-  "@vue/cli-plugin-babel": "~4.5.0",
-  "@vue/cli-plugin-eslint": "~4.5.0",
-  "@vue/cli-service": "~4.5.0",
-  "@vue/compiler-sfc": "^3.0.0-0",
-  "babel-eslint": "^10.1.0",
-  "core-js": "^3.6.5",
-  "eslint": "^6.7.2",
-  "eslint-plugin-vue": "^7.0.0-0",
-  "vue": "^3.0.0-0"
-}
+$ yarn add --dev electron electron-builder wait-on concurrently vuepress
+# npm i -D electron electron-builder wait-on concurrently vuepress
 ```
 
-#### 5) Install Development Dependencies
-
-```bash
-$ yarn add --dev electron electron-builder wait-on concurrently
-# npm i -D electron electron-builder wait-on concurrently
-```
-
-#### 6) Install Production Dependency
+#### 5) Install Production Dependency
 
 ```bash
 $ yarn add electron-serve # or npm i electron-serve
 ```
 
-#### 7) Your dependencies should look something like this
+#### 6) Your dependencies should look something like this
 
 ```json
 "dependencies": {
   "electron-serve": "^1.0.0"
 },
 "devDependencies": {
-  "@vue/cli-plugin-babel": "~4.5.0",
-  "@vue/cli-plugin-eslint": "~4.5.0",
-  "@vue/cli-service": "~4.5.0",
-  "@vue/compiler-sfc": "^3.0.0-0",
-  "babel-eslint": "^10.1.0",
-  "core-js": "^3.6.5",
   "concurrently": "^5.3.0",
   "electron": "^10.1.0",
   "electron-builder": "^22.8.0",
-  "eslint": "^6.7.2",
-  "eslint-plugin-vue": "^7.0.0-0",
-  "vue": "^3.0.0-0",
+  "vuepress": "^1.5.4",
   "wait-on": "^5.2.0"
 }
 ```
 
-#### 8) Download the app icon
+#### 7) Download the app icon
 
-[favicon.png](https://raw.githubusercontent.com/soulehshaikh99/assets/master/framework-icons/vue/favicon.png) and place it in the public directory.
+[favicon.png](https://raw.githubusercontent.com/soulehshaikh99/assets/master/framework-icons/vuepress/favicon.png) and place it in the public directory.
 
-#### 9) Create vue.config.js file (serves as configuration file for @vue/cli-service)
-
-```bash
-# Windows Users
-$ fsutil file createnew vue.config.js 0
-# notepad vue.config.js
-
-# Linux and macOS Users
-$ touch vue.config.js
-```
-
-#### 10) Paste the below code in vue.config.js file
+#### 8) Paste vuepress configuration in `src/.vuepress/config.js` file
 
 ```js
-const path = require("path");
-
 module.exports = {
-    // Changes vue.js build directory
-    outputDir: path.resolve(__dirname, "build")
+    // Changes vuepress build directory
+    dest: 'build'
 };
 ```
 
-#### 11) Create main.js file (serves as entry point for Electron App's Main Process)
+#### 9) Create main.js file (serves as entry point for Electron App's Main Process)
 
 ```bash
 # Windows Users
@@ -176,7 +141,7 @@ $ fsutil file createnew main.js 0
 $ touch main.js
 ```
 
-#### 12) Paste the below code in main.js file
+#### 10) Paste the below code in main.js file
 
 ```js
 // Modules to control application life and create native browser window
@@ -203,7 +168,7 @@ function createWindow() {
     },
     // Use this in development mode.
     icon: isDev()
-      ? path.join(process.cwd(), "public/favicon.png")
+      ? path.join(process.cwd(), "src/.vuepress/public/favicon.png")
       : path.join(__dirname, "build/favicon.png"),
     // Use this in production mode.
     // icon: path.join(__dirname, 'build/favicon.png'),
@@ -261,36 +226,35 @@ app.on("activate", function () {
 // code. You can also put them in separate files and require them here.
 ```
 
-#### 13) Update the script section of `package.json`
+#### 11) Update the script section of `package.json`
 
 ```bash
 # Add this scripts
 "electron": "wait-on http://localhost:8080 && electron .",
-"electron-dev": "concurrently \"yarn run serve\" \"yarn run electron\"",
-"preelectron-pack": "yarn run build",
+"electron-dev": "concurrently \"yarn run dev\" \"yarn run electron\"",
+"preelectron-pack": "yarn build",
 "electron-pack": "electron-builder"
 
 # You should end up with something similar
 "scripts": {
-  "serve": "vue-cli-service serve",
-  "build": "vue-cli-service build",
-  "lint": "vue-cli-service lint",
+  "dev": "vuepress dev src",
+  "build": "vuepress build src",
   "electron": "wait-on http://localhost:8080 && electron .",
-  "electron-dev": "concurrently \"yarn run serve\" \"yarn run electron\"",
-  "preelectron-pack": "yarn run build",
+  "electron-dev": "concurrently \"yarn run dev\" \"yarn run electron\"",
+  "preelectron-pack": "yarn build",
   "electron-pack": "electron-builder"
 }
 ```
 
-#### 14) Add the following configuration in `package.json`
+#### 12) Add the following configuration in `package.json`
 
 **Note:** build configuration is used by electron-builder, modify it if you wish to add more packaging and native distribution options for different OS Platforms.
 
 ```bash
 "main": "main.js",  # Application Entry Point, please verify entry point is set to main.js
 "build": {
-  "icon": "public/favicon.png",
-  "productName": "Vue and Electron App",
+  "icon": "src/.vuepress/public/favicon.png",
+  "productName": "VuePress and Electron App",
   "files": [
     "build/**/*",
     "main.js"
@@ -301,7 +265,7 @@ app.on("activate", function () {
 }
 ```
 
-#### 15) Test drive your app
+#### 13) Test drive your app
 
 ```bash
 # Run your app
@@ -314,7 +278,7 @@ $ yarn electron-pack # or npm run electron-pack
 ### 💯 Result
 
 <div align="center">
-<img alt="Electron Vue Window Screeenshot" src="https://raw.githubusercontent.com/soulehshaikh99/assets/master/create-electron-framework-app/readme/png/create-vue-electron-app.png" />
+<img alt="Electron VuePress Window Screeenshot" src="https://raw.githubusercontent.com/soulehshaikh99/assets/master/create-electron-framework-app/readme/png/create-vuepress-electron-app.png" />
 </div>
 
 <h3>😍 Made with ❤️ from Souleh</h3>
@@ -323,4 +287,4 @@ $ yarn electron-pack # or npm run electron-pack
 <br/>
 
 <h3>📋 License: </h3>
-Licensed under the <a href="https://github.com/soulehshaikh99/create-vue-electron-app/blob/master/LICENSE">MIT License</a>.
+Licensed under the <a href="https://github.com/soulehshaikh99/create-vuepress-electron-app/blob/master/LICENSE">MIT License</a>.
