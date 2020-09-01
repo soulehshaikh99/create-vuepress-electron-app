@@ -5,7 +5,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Electron App',
+  title: 'Vuepress and Electron App',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
