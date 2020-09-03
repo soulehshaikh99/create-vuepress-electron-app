@@ -31,7 +31,6 @@ The aim of this project is to provide Web Developers using `vuepress` the power 
 Simplicity First: Minimal setup with markdown-centered project structure helps you focus on writing.
 Vue-Powered: Enjoy the dev experience of Vue + webpack, use Vue components in markdown, and develop custom themes with Vue.
 Performant: VuePress generates pre-rendered static HTML for each page, and runs as an SPA once a page is loaded.
-99
 
 **`concurrently`** is used to run multiple commands concurrently.
 
